@@ -4,7 +4,7 @@
   "description": "",
   "main": "webrtc.js",
   "scripts": {
-    "start": "http-server"
+    "start": "ws --spa index.html"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/ctco-dev/webrtc-client#readme",
   "dependencies": {
-    "http-server": "^0.9.0"
+    "local-web-server": "^1.2.6"
   }
 }

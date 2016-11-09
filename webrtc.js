@@ -16,6 +16,8 @@ window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnecti
 window.RTCIceCandidate = window.RTCIceCandidate || window.mozRTCIceCandidate || window.webkitRTCIceCandidate;
 window.RTCSessionDescription = window.RTCSessionDescription || window.mozRTCSessionDescription || window.webkitRTCSessionDescription;
 
+var room = location.pathname;
+
 var searchParams = new URLSearchParams();
 searchParams.set('ident', 'yeliseev');
 searchParams.set('secret', '46b999b0-a677-11e6-87ad-a75b3d35d1e1');
@@ -83,12 +85,13 @@ function gotMessageFromServer(message) {
 
     var signal = JSON.parse(message.data);
 
-    // ignore our own messages
-    if (signal.userId === userId) {
+    // ignore our own messages and messages from other roooms
+    console.log(signal);
+    if (signal.userId === userId || signal.room !== room) {
         return;
     }
 
-    console.log(message);
+    console.log('message', message);
 
     switch (signal.type) {
         case MESSAGE_TYPE_SDP:
@@ -147,6 +150,7 @@ function serverMessage(type, contents) {
     serverConnection.send(JSON.stringify({
         type: type,
         userId: userId,
+        room: room,
         contents: contents
     }));
 }
