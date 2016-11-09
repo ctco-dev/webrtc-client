@@ -12,7 +12,7 @@ function pageReady() {
     localVideo = document.getElementById('localVideo');
     remoteVideo = document.getElementById('remoteVideo');
 
-    serverConnection = new WebSocket('ws://127.0.0.1:5000');
+    serverConnection = new WebSocket('ws://webrtc-proto-server.herokuapp.com/');
     serverConnection.onmessage = gotMessageFromServer;
 
     var constraints = {
