@@ -8,6 +8,7 @@ var MESSAGE_TYPE_SDP = 'sdp';
 var MESSAGE_TYPE_ICE = 'ice';
 var MESSAGE_TYPE_ONLINE = 'online';
 var MESSAGE_TYPE_ONLINE_CONFIRM = 'onlineConfirm';
+var MESSAGE_TYPE_OFFLINE = 'offline';
 
 navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
 window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
@@ -22,6 +23,9 @@ function pageReady() {
     serverConnection.onmessage = gotMessageFromServer;
     serverConnection.onopen = function() {
         serverMessage(MESSAGE_TYPE_ONLINE);
+    }
+    serverConnection.onclosed = function() {
+        serverMessage(MESSAGE_TYPE_OFFLINE);
     }
 
     var constraints = {
@@ -84,6 +88,10 @@ function gotMessageFromServer(message) {
             enableCall();
             
             break;
+        case MESSAGE_TYPE_OFFLINE:
+            disableCall();
+            
+            break;
     }
 }
 
@@ -124,4 +132,13 @@ function serverMessage(type, contents) {
 function enableCall() {
     document.querySelector('#waiting').style.display = 'none';
     document.querySelector('#start').style.display = 'inline';
+}
+
+function disableCall() {
+    document.querySelector('#waiting').style.display = 'inline';
+    document.querySelector('#start').style.display = 'none';
+}
+
+window.onbeforeunload = function() {
+    serverMessage(MESSAGE_TYPE_OFFLINE);
 }
