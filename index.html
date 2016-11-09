@@ -1,15 +1,32 @@
 <html>
     <head>
         <script src="webrtc.js"></script>
+        <style>
+            .video {
+                margin-left: 3%;
+                width: 45%;
+                background: #f4f4f4;
+            }
+
+            .buttons {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            #start {
+                font-size: 1.3em;
+                padding: 0.5em;
+            }
+        </style>
     </head>
 
     <body>
-        <video id="localVideo" autoplay muted style="width:40%;"></video>
-        <video id="remoteVideo" autoplay style="width:40%;"></video>
+        <video id="localVideo" class="video" autoplay muted></video>
+        <video id="remoteVideo" class="video" autoplay></video>
 
-        <br />
-
-        <button type="button" id="start" onclick="start(true)">Start Video</button>
+        <div class="buttons">
+            <button type="button" id="start" onclick="start(true)">Start Video</button>
+        </div>
 
         <script type="text/javascript">
             pageReady();
