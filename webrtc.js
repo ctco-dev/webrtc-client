@@ -63,7 +63,7 @@ function start(isCaller) {
 function gotMessageFromServer(message) {
     if(!peerConnection && localStream) start(false);
 
-    var signal = JSON.parse(decodeURIComponent(message.data));
+    var signal = JSON.parse(message.data);
 
     // ignore our own messages
     if (signal.userId === userId) {
@@ -126,11 +126,11 @@ function errorHandler(error) {
 }
 
 function serverMessage(type, contents) {
-    serverConnection.send(encodeURIComponent(JSON.stringify({
+    serverConnection.send(JSON.stringify({
         type: type,
         userId: userId,
         contents: contents
-    })));
+    }));
 }
 
 function enableCall() {
