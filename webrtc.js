@@ -1,6 +1,7 @@
 var localVideo;
 var remoteVideo;
 var peerConnection;
+var localStream;
 var userId = (Math.random(0, 1) * 1000000).toFixed().toString();
 var peerConnectionConfig = {'iceServers': [{'url': 'stun:stun.services.mozilla.com'}, {'url': 'stun:stun.l.google.com:19302'}]};
 
@@ -57,7 +58,7 @@ function start(isCaller) {
 }
 
 function gotMessageFromServer(message) {
-    if(!peerConnection) start(false);
+    if(!peerConnection && localStream) start(false);
 
     var signal = JSON.parse(message.data);
 
