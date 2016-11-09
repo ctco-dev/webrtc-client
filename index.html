@@ -11,11 +11,13 @@
             .buttons {
                 margin-top: 20px;
                 text-align: center;
+                font-size: 1.3em;
             }
 
             #start {
-                font-size: 1.3em;
                 padding: 0.5em;
+                font-size: 1em;
+                display: none;
             }
         </style>
     </head>
@@ -25,7 +27,8 @@
         <video id="remoteVideo" class="video" autoplay></video>
 
         <div class="buttons">
-            <button type="button" id="start" onclick="start(true)">Start Video</button>
+            <span id="waiting">Waiting for a peer &hellip;</span>
+            <button type="button" id="start" onclick="start(true)">Start Call</button>
         </div>
 
         <script type="text/javascript">
