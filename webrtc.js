@@ -3,10 +3,7 @@ var remoteVideo;
 var peerConnection;
 var localStream;
 var userId = (Math.random(0, 1) * 1000000).toFixed().toString();
-var peerConnectionConfig = {'iceServers': [
-    {'urls': 'stun:stun.services.mozilla.com'}, 
-    {'urls': 'stun:stun.l.google.com:19302'}
-]};
+var peerConnectionConfig;
 
 var MESSAGE_TYPE_SDP = 'sdp';
 var MESSAGE_TYPE_ICE = 'ice';
@@ -18,6 +15,27 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || 
 window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
 window.RTCIceCandidate = window.RTCIceCandidate || window.mozRTCIceCandidate || window.webkitRTCIceCandidate;
 window.RTCSessionDescription = window.RTCSessionDescription || window.mozRTCSessionDescription || window.webkitRTCSessionDescription;
+
+var searchParams = new URLSearchParams();
+searchParams.set('ident', 'yeliseev');
+searchParams.set('secret', '46b999b0-a677-11e6-87ad-a75b3d35d1e1');
+searchParams.set('domain', 'webrtc-proto');
+searchParams.set('application', 'test');
+searchParams.set('room', 'test');
+searchParams.set('secure', '1');
+
+fetch("https://service.xirsys.com/ice", {
+  method: "POST",
+  body: searchParams
+})
+.then(function(response) {
+    return response.json();
+})
+.then(function(response) {
+    console.log(response);
+    peerConnectionConfig = response.d;
+    pageReady();
+});
 
 function pageReady() {
     localVideo = document.getElementById('localVideo');
