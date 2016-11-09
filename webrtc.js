@@ -104,7 +104,7 @@ function gotIceCandidate(event) {
 }
 
 function gotDescription(description) {
-    console.log('got description');
+    console.log('got description', description);
     peerConnection.setLocalDescription(description, function () {
         serverMessage(MESSAGE_TYPE_SDP, {
             description: description
