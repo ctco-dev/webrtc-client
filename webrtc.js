@@ -137,6 +137,7 @@ function enableCall() {
 function disableCall() {
     document.querySelector('#waiting').style.display = 'inline';
     document.querySelector('#start').style.display = 'none';
+    remoteVideo.src = '';
 }
 
 window.onbeforeunload = function() {
