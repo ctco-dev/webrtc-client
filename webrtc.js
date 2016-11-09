@@ -3,7 +3,10 @@ var remoteVideo;
 var peerConnection;
 var localStream;
 var userId = (Math.random(0, 1) * 1000000).toFixed().toString();
-var peerConnectionConfig = {'iceServers': [{'url': 'stun:stun.services.mozilla.com'}, {'url': 'stun:stun.l.google.com:19302'}]};
+var peerConnectionConfig = {'iceServers': [
+    {'urls': 'stun:stun.services.mozilla.com'}, 
+    {'urls': 'stun:stun.l.google.com:19302'}
+]};
 
 var MESSAGE_TYPE_SDP = 'sdp';
 var MESSAGE_TYPE_ICE = 'ice';
