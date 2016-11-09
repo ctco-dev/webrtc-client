@@ -4,6 +4,7 @@ var peerConnection;
 var localStream;
 var userId = (Math.random(0, 1) * 1000000).toFixed().toString();
 var peerConnectionConfig = {'iceServers': [
+    {'urls': 'stun:stun.services.mozilla.com'}, 
     {'urls': 'stun:stun.l.google.com:19302'}
 ]};
 
