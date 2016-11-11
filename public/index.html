@@ -1,34 +1,35 @@
-<html>
-    <head>
-        <style>
-            .video {
-                margin-left: 3%;
-                width: 45%;
-                background: #f4f4f4;
-            }
+<!doctype html>
+<html lang="eng">
+<head>
+    <style>
+        .video {
+            margin-left: 3%;
+            width: 45%;
+            background: #f4f4f4;
+        }
 
-            .buttons {
-                margin-top: 20px;
-                text-align: center;
-                font-size: 1.3em;
-            }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.3em;
+        }
 
-            #start {
-                padding: 0.5em;
-                font-size: 1em;
-                display: none;
-            }
-        </style>
-    </head>
+        #start {
+            padding: 0.5em;
+            font-size: 1em;
+            display: none;
+        }
+    </style>
+    <script defer src="./webrtc.js"></script>
+</head>
 
-    <body>
-        <video id="localVideo" class="video" autoplay muted></video>
-        <video id="remoteVideo" class="video" autoplay></video>
+<body>
+<video id="localVideo" class="video" autoplay muted></video>
+<video id="remoteVideo" class="video" autoplay></video>
 
-        <div class="buttons">
-            <span id="waiting">Waiting for a peer &hellip;</span>
-            <button type="button" id="start" onclick="start(true)">Start Call</button>
-        </div>
-    </body>
-    <script src="/webrtc.js"></script>
+<div class="buttons">
+    <span id="waiting">Waiting for a peer &hellip;</span>
+    <!--<button type="button" id="start" onclick="start(true)">Start Call</button>-->
+</div>
+</body>
 </html>

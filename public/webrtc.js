@@ -47,10 +47,10 @@ function pageReady() {
     serverConnection.onmessage = gotMessageFromServer;
     serverConnection.onopen = function() {
         serverMessage(MESSAGE_TYPE_ONLINE);
-    }
+    };
     serverConnection.onclosed = function() {
         serverMessage(MESSAGE_TYPE_OFFLINE);
-    }
+    };
 
     var constraints = {
         video: true,
@@ -84,6 +84,10 @@ function gotMessageFromServer(message) {
     if(!peerConnection && localStream) start(false);
 
     var signal = JSON.parse(message.data);
+
+    if(signal.userId === userId && signal.type === MESSAGE_TYPE_ONLINE_CONFIRM) {
+        start(true);
+    }
 
     // ignore our own messages and messages from other roooms
     console.log(signal);
@@ -157,15 +161,15 @@ function serverMessage(type, contents) {
 
 function enableCall() {
     document.querySelector('#waiting').style.display = 'none';
-    document.querySelector('#start').style.display = 'inline';
+    // document.querySelector('#start').style.display = 'inline';
 }
 
 function disableCall() {
     document.querySelector('#waiting').style.display = 'inline';
-    document.querySelector('#start').style.display = 'none';
+    // document.querySelector('#start').style.display = 'none';
     remoteVideo.src = '';
 }
 
 window.onbeforeunload = function() {
     serverMessage(MESSAGE_TYPE_OFFLINE);
-}
+};

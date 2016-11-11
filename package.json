@@ -4,7 +4,7 @@
   "description": "",
   "main": "webrtc.js",
   "scripts": {
-    "start": "ws --spa index.html -p 8080"
+    "start": "ws --spa index.html -p 8080 -d public --https"
   },
   "repository": {
     "type": "git",
