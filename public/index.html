@@ -1,35 +1,93 @@
 <!doctype html>
 <html lang="eng">
 <head>
-    <style>
-        .video {
-            margin-left: 3%;
-            width: 45%;
-            background: #f4f4f4;
-        }
-
-        .buttons {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 1.3em;
-        }
-
-        #start {
-            padding: 0.5em;
-            font-size: 1em;
-            display: none;
-        }
-    </style>
-    <script defer src="./webrtc.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://use.fontawesome.com/42a6489a3f.js"></script>
 </head>
 
 <body>
-<video id="localVideo" class="video" autoplay muted></video>
-<video id="remoteVideo" class="video" autoplay></video>
-
-<div class="buttons">
-    <span id="waiting">Waiting for a peer &hellip;</span>
-    <!--<button type="button" id="start" onclick="start(true)">Start Call</button>-->
+<div class="page-wrap">
+    <div class="header">
+        <div class="header__nav">
+            <div class="main-nav container">
+                <div class="logo">
+                    <img width="160px" src="./img/logo.png" alt="Contrexx">
+                </div>
+                <ul class="menu">
+                    <li class="menu__item"><i class="fa fa-comment" aria-hidden="true"></i>Interactions</li>
+                    <li class="menu__item"><i class="fa fa-eye" aria-hidden="true"></i>Watch list</li>
+                    <li class="menu__item"><i class="fa fa-folder-open-o" aria-hidden="true"></i>Briefs</li>
+                    <li class="menu__item">
+                        <div class="user">
+                            <i class="user__icon fa fa-user fa-3" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="createRoomPage">
+        <button class="btn create-room-btn" onclick="Contrxx.createRoom()">Create Room</button>
+    </div>
+    <div id="videoChatPage">
+        <div class="contrxx-app container">
+            <div class="video-chat">
+                <div class="video-chat__client">
+                    <span id="waiting">Waiting for a peer...</span>
+                    <video id="remoteVideo" style="display: none" class="video" autoplay></video>
+                    <div class="video-chat__owner">
+                        <video id="localVideo" class="video" autoplay muted></video>
+                    </div>
+                </div>
+                <div class="video-chat__info">
+                    <div class="video-options">
+                        <div id="video-chat-time">00:00</div>
+                        <i class="fa fa-microphone-slash fa-2 video-options__option video-options__micro"
+                           aria-hidden="true"></i>
+                        <i class="fa fa-phone fa-2 video-options__option video-options__stop-call"
+                           aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="chat">
+                <div class="chat__messages">
+                    <img src="img/chat.png" alt="chat">
+                </div>
+                <div class="chat__control">
+                    <input class="chat__input txt-input" type="text"/>
+                    <div class="chat__send btn">
+                        SEND
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<footer class="footer">
+    <div class="footer__top-menu">
+        <div class="container">
+            <ul class="menu">
+                <li class="menu__item">London</li>
+                <li class="menu__item">Zurich</li>
+                <li class="menu__item">Hong Kong</li>
+                <li class="menu__item">New Your</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__bottom-menu">
+        <div class="container">
+            <ul class="menu">
+                <li class="menu__item">Terms & Conditions</li>
+                <li class="menu__item">Privacy Policy</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="scripts/timer.js"></script>
+<script src="scripts/contrxx.js"></script>
+<script src="./webrtc.js"></script>
+
 </body>
 </html>

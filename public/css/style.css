@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-width: 990px;
+    font-family: 'Open Sans', Verdana, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1480px;
+}
+
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -10vh;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+.contrxx-app {
+    display: flex;
+    justify-content: space-between;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header {
+    position: relative;
+    height: 145px;
+    width: 100%;
+    background: linear-gradient(rgba(239, 226, 226, 0) 0px, rgba(0, 16, 42, 0.298039) 100%),
+    linear-gradient(to left, rgba(0, 0, 0, 0),
+            rgba(3, 18, 41, 0.6)),
+    linear-gradient(rgba(0, 106, 230, 0.45098),
+            rgba(57, 143, 244, 0.498039)),
+    url(../img/header.png) no-repeat;
+    background-size: cover;
+
+}
+
+.header__nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 0;
+    background: rgba(38, 96, 136, 0.84);
+}
+
+.main-nav {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu__item {
+    display: inline-block;
+    padding: 0 10px;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.menu__item > i {
+    padding-right: 10px;
+}
+
+.video-chat {
+    height: 60vh;
+    width: 65%;
+    padding-top: 50px;
+    margin-left: 50px;
+}
+
+.video-chat__owner {
+    width: 180px;
+    height: 130px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.video-chat__client {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    background: rgba(0, 57, 97, 0.84);
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px #fff inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+}
+
+.video-chat__info {
+    text-align: right;
+}
+
+/*Video Options*/
+.video-options {
+    display: inline-block;
+}
+
+.video-options > .video-options__option {
+    width: 30px;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: 100%;
+    margin: 10px 7px;
+}
+
+.video-options__micro {
+    background: #285879;
+}
+
+.video-options__stop-call {
+    background: #ed1c24;
+}
+
+.chat {
+    width: 340px;
+}
+
+.logo {
+    margin-left: 50px;
+}
+
+.user {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #fff;
+    position: relative;
+    font-size: 30px;
+}
+
+.user__icon {
+    color: #266089;
+    position: absolute;
+    right: 8px;
+    top: 7px;
+}
+
+.chat__messages {
+    height: 55vh;
+}
+
+.chat__control {
+    height: 5vh;
+}
+
+.chat__input {
+    width: 250px;
+}
+
+.chat__input, .chat__send {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.txt-input {
+    border-radius: 3px;
+    padding: 11px 5px;
+    font-size: 16px;
+    border: solid 1px #c2c2c2;
+}
+
+.btn {
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 10px 5px;
+    background-color: #205981;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn:hover {
+    cursor: pointer;
+    user-select: none;
+}
+
+#waiting {
+    color: #fff;
+}
+
+/*FOOTER*/
+
+.footer {
+    height: 10vh;
+    background: #194563;
+}
+
+.footer__top-menu {
+    background-color: #266089;
+}
+
+.footer__top-menu .menu__item {
+    font-size: 14px;
+    padding: 1.5vh 30px;
+    color: #fff;
+}
+
+.footer__bottom-menu .menu__item {
+    color: #fff;
+    font-size: 12px;
+}
+
+.footer__bottom-menu .menu__item:first-child {
+    padding-left: 30px;
+}
+
+/*Video Chat Time*/
+#video-chat-time {
+    color: #fff;
+    background-color: #266089;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 18px;
+}
+
+#createRoomPage {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.create-room-btn {
+    margin: 0 auto;
+}

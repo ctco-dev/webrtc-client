@@ -160,8 +160,9 @@ function serverMessage(type, contents) {
 }
 
 function enableCall() {
+    Contrxx.timeManager.start();
     document.querySelector('#waiting').style.display = 'none';
-    // document.querySelector('#start').style.display = 'inline';
+    document.querySelector('#remoteVideo').style.display = 'inline';
 }
 
 function disableCall() {
