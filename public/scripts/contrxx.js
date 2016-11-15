@@ -17,8 +17,13 @@
         window.location.href = '/' + randomString;
     };
 
-    Contrxx.timeManager = new Timer({
+    Contrxx.totalTime = new Timer({
         el: document.querySelector('#video-chat-time')
+    });
+
+    Contrxx.limitedTime = new Timer({
+        timeLimit:20,
+        el: document.querySelector('#video-chat-time-limit')
     });
 
 })(window);

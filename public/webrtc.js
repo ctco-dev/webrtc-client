@@ -96,7 +96,7 @@ function gotMessageFromServer(message) {
     }
 
     console.log('message', message);
-
+    console.log(signal.type);
     switch (signal.type) {
         case MESSAGE_TYPE_SDP:
             peerConnection.setRemoteDescription(new RTCSessionDescription(signal.contents.description), function() {
@@ -160,12 +160,14 @@ function serverMessage(type, contents) {
 }
 
 function enableCall() {
-    Contrxx.timeManager.start();
+    Contrxx.totalTime.start();
+    Contrxx.limitedTime.start();
     document.querySelector('#waiting').style.display = 'none';
     document.querySelector('#remoteVideo').style.display = 'inline';
 }
 
 function disableCall() {
+    Contrxx.totalTime.stop();
     document.querySelector('#waiting').style.display = 'inline';
     // document.querySelector('#start').style.display = 'none';
     remoteVideo.src = '';

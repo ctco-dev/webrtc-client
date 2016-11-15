@@ -3,6 +3,7 @@ class Timer {
     constructor(options) {
         this._result = options.el;
         this._seconds = 0;
+        this._timeLimit = options.timeLimit ? options.timeLimit * 60 : null;
     }
 
 
@@ -36,7 +37,13 @@ class Timer {
     }
 
     _updateTime() {
-        this._seconds += 1;
+        if (this._timeLimit) {
+            this._timeLimit -= 1;
+            this._seconds = this._timeLimit;
+        } else {
+            this._seconds += 1;
+        }
+
         this._renderTime(this._seconds);
     }
 

@@ -141,6 +141,10 @@ body {
     background: #ed1c24;
 }
 
+.video-options__stop-call:hover {
+    cursor: pointer;
+}
+
 .chat {
     width: 340px;
 }
@@ -238,12 +242,17 @@ body {
 }
 
 /*Video Chat Time*/
-#video-chat-time {
-    color: #fff;
+
+.time {
     background-color: #266089;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 18px;
+    color:#fff;
+}
+
+#video-chat-time {
+    font-weight: bold;
 }
 
 #createRoomPage {
