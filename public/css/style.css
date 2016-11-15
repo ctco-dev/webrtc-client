@@ -109,11 +109,8 @@ body {
 .video-chat__client {
     height: 100%;
     overflow: hidden;
-    display: flex;
     position: relative;
     background: rgba(0, 57, 97, 0.84);
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 1px #fff inset, 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
@@ -208,6 +205,10 @@ body {
 
 #waiting {
     color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /*FOOTER*/
