@@ -121,6 +121,7 @@ body {
 /*Video Options*/
 .video-options {
     display: inline-block;
+    width: 100%;
 }
 
 .video-options > .video-options__option {
@@ -131,6 +132,7 @@ body {
     color: #fff;
     border-radius: 100%;
     margin: 10px 7px;
+    display: inline-block;
 }
 
 .video-options__micro {
@@ -248,7 +250,7 @@ body {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 18px;
-    color:#fff;
+    color: #fff;
 }
 
 #video-chat-time {
@@ -262,4 +264,15 @@ body {
 
 .create-room-btn {
     margin: 0 auto;
+}
+
+#link-to-share {
+    background-color: #fff;
+    color: #266089;
+    border: 1px solid;
+}
+
+.link {
+    float: left;
+    margin-top: 10px;
 }

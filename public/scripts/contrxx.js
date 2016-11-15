@@ -4,6 +4,9 @@
     var randomString = Math.random().toString(36).slice(-8);
     var videoChatPage = document.querySelector('#videoChatPage');
     var createRoomPage = document.querySelector('#createRoomPage');
+    var linkToShare = document.querySelector('#link-to-share');
+
+    linkToShare.innerHTML = window.location.href;
 
     if (window.location.pathname !== '/') {
         videoChatPage.style.display = 'block';
@@ -22,7 +25,7 @@
     });
 
     Contrxx.limitedTime = new Timer({
-        timeLimit:20,
+        timeLimit: 20,
         el: document.querySelector('#video-chat-time-limit')
     });
 

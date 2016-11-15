@@ -42,6 +42,9 @@
                 </div>
                 <div class="video-chat__info">
                     <div class="video-options">
+                        <div class="link">
+                            <div id="link-to-share" class="time"></div>
+                        </div>
                         <div class="time">
                             <span id="video-chat-time">00:00</span>
                             <span>/</span>
@@ -49,9 +52,11 @@
                         </div>
                         <i class="fa fa-microphone-slash fa-2 video-options__option video-options__micro"
                            aria-hidden="true"></i>
-                        <i onclick="disableCall()"
-                           class="fa fa-phone fa-2 video-options__option video-options__stop-call"
-                           aria-hidden="true"></i>
+                        <a class="video-options__option video-options__stop-call" href="https://projects.invisionapp.com/share/XK770F9MQ#/screens/158587907_15_01_Feedback_Green">
+                            <i onclick="disableCall()"
+                               class="fa fa-phone fa-2 "
+                               aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
