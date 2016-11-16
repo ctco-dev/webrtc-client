@@ -43,7 +43,8 @@
                 <div class="video-chat__info">
                     <div class="video-options">
                         <div class="link">
-                            <div id="link-to-share" class="time"></div>
+                            <div data-holder id="link-to-share" class="time"></div>
+                            <button data-copy class="btn copy-link">Copy</button>
                         </div>
                         <div class="time">
                             <span id="video-chat-time">00:00</span>
@@ -94,7 +95,7 @@
         </div>
     </div>
 </footer>
-
+<script src="scripts/copy-to-clipboard.js"></script>
 <script src="scripts/timer.js"></script>
 <script src="scripts/contrxx.js"></script>
 <script src="./webrtc.js"></script>

@@ -29,4 +29,8 @@
         el: document.querySelector('#video-chat-time-limit')
     });
 
+    new CopyToClipboard({
+        el: document.querySelector('.link')
+    });
+
 })(window);
