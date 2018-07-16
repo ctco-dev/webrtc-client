@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/ctco-dev/webrtc-client#readme",
   "dependencies": {
-    "local-web-server": "^1.2.6"
+    "local-web-server": "^2.5.6"
   }
 }
